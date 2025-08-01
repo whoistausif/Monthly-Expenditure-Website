@@ -1,0 +1,134 @@
+:root {
+  --bg-color: #f9f9fb;
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --text-light: #777;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  margin: 0;
+  padding: 30px;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+}
+
+.date-time {
+  font-size: 1em;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+#print-month {
+  display: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+form {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+}
+
+input[type="number"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f3f5;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 1em;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin: 10px 8px 0 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #217dbb;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+}
+
+.total {
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+.print-footer {
+  display: none;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 50px;
+  color: #555;
+}
+
+
+@media print {
+  .add-row,
+  .remove-btn,
+  .action-col,
+  button,
+  .date-time {
+    display: none !important;
+  }
+
+  #print-month {
+    display: block;
+  }
+
+  body {
+    background: white;
+  }
+
+  form {
+    box-shadow: none;
+  }
+
+  .print-footer {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+  }
+
+}

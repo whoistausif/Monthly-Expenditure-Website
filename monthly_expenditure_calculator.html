@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monthly Expenditure Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Monthly Expenditure Calculator</h2>
+  <div id="datetime" class="date-time"></div>
+  <div id="print-month" class="print-only"></div>
+
+  <form id="expense-form">
+    <label for="budget"><strong>Enter Your Budget (₹):</strong></label>
+    <input type="number" id="budget" placeholder="e.g. 17000" oninput="calculateTotal()" />
+
+    <table id="expense-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount (₹)</th>
+          <th class="action-col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" value="Grocery Monthly" /></td>
+          <td><input type="number" placeholder="0" /></td>
+          <td class="action-col"></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Electricity Bill" /></td>
+          <td><input type="number" placeholder="0" /></td>
+          <td class="action-col"></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Fuel Consumption" /></td>
+          <td><input type="number" placeholder="0" /></td>
+          <td class="action-col"></td>
+        </tr>
+        <tr>
+          <td><input type="text" value="Gas" /></td>
+          <td><input type="number" placeholder="0" /></td>
+          <td class="action-col"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="add-row" onclick="addRow()">+ Add Category</button>
+
+    <div class="total">
+      <p><strong>Total Expenditure:</strong> ₹ <span id="total">0.00</span></p>
+      <p><strong>Remaining Budget:</strong> ₹ <span id="remaining">0.00</span></p>
+    </div>
+
+    <button type="button" onclick="calculateTotal()">Calculate</button>
+    <button type="button" onclick="window.print()">Print Summary</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+<div class="print-footer">Thanks For Using Monthly Expenditure Website By Mohammad Tausif</div>
+
+</html>
